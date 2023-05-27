@@ -11,3 +11,10 @@ type InvoiceDetailsPageResponseType{
     rows: [InvoiceDetails]
 }
 
+input InvoiceDetailsCreateInput{
+    cost: Int
+    payMethod: String
+    idInvoice: Int
+    idBooking: Int
+}
+

@@ -20,4 +20,5 @@ type Mutation {
     createClient(data: ClientCreateInput):Client
     createBooking(data: BookingCreateInput):Booking
     createInvoice(data: InvoiceCreateInput):Invoice
+    createInvoiceDetails(data: InvoiceDetailsCreateInput):InvoiceDetails
 }

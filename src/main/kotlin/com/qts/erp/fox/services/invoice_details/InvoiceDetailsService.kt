@@ -41,7 +41,16 @@ class InvoiceDetailsService : GenericDataAccessInterface<InvoiceDetailsModel>{
     }
 
     override fun insert(databaseId: String, model: DTOInterface): InvoiceDetailsModel {
-        TODO("Not yet implemented")
+        val sql: String = """
+            DECLARE @json NVARCHAR(MAX)
+            SET @json = :json
+            EXEC [dbo].[sp_create_invoice_details] @json
+        """.trimIndent()
+        getConnection(databaseId).open().use { con ->
+            return con.createQuery(sql)
+                .addParameter("json","{\"data\": ${mapper.writeValueAsString(model)}}" )
+                .executeAndFetchFirst(InvoiceDetailsModel::class.java)
+        }
     }
 
     override fun update(databaseId: String, model: DTOInterface): InvoiceDetailsModel {
