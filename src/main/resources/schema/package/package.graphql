@@ -1,0 +1,17 @@
+type Package{
+    id: ID
+    name: String
+    cost: Int
+    description: String
+}
+
+type PackagePageResponseType {
+    count: Int
+    rows: [Package]
+}
+
+input PackageFilterInput {
+    id: ID
+    name: String
+    pagination: Pagination
+}

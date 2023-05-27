@@ -1,0 +1,25 @@
+type Client {
+    id: ID
+    name: String
+    idNumber: String
+    phNumber: String
+    email: String
+}
+
+type ClientPageResponseType{
+    count: Int
+    rows: [Client]
+}
+
+input ClientFilterInput{
+    id:ID
+    name: String
+    pagination: Pagination
+}
+
+input ClientCreateInput {
+    name: String!
+    idNumber: String!
+    phNumber: String!
+    email: String!
+}

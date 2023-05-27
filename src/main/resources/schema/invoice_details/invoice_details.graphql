@@ -1,0 +1,13 @@
+type InvoiceDetails{
+    id: ID
+    cost: Int
+    payMethod: String
+    invoice: Invoice
+    booking: Booking
+}
+
+type InvoiceDetailsPageResponseType{
+    count: Int
+    rows: [InvoiceDetails]
+}
+

@@ -1,0 +1,26 @@
+type Room {
+    id: ID
+    number: Int
+    floor: Int
+    capacity: Int
+    avail: Int
+    cost: Int
+    description: String
+    hotel: Hotel
+    roomType: RoomType
+}
+
+type RoomPageResponseType{
+    count: Int
+    rows: [Room]
+}
+
+input RoomFilterInput{
+    id:ID
+    number: Int
+    floor: Int
+    capacity: Int
+    avail: Int
+    pagination: Pagination
+}
+

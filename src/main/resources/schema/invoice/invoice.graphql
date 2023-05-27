@@ -1,0 +1,20 @@
+type Invoice{
+    id: ID
+    invoiceDate: String
+    client: Client
+}
+
+type InvoicePageResponseType{
+    count: Int
+    rows: [Invoice]
+}
+
+input InvoiceFilterInput{
+    id: ID
+    pagination: Pagination
+}
+
+input InvoiceCreateInput{
+    invoiceDate: String
+    idClient: Int
+}

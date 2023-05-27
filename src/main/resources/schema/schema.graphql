@@ -1,0 +1,23 @@
+scalar Date
+
+type Query {
+    costCenters(filter: CostCentersFilterInput): [CostCenter]
+    costCenter(id: Int):CostCenter
+    costCentersPage(filter:CostCenterFilterInput):CostCenterPageResponse!
+    # Hotel
+    roomTypePage(filter: RoomTypeFilterInput):RoomTypePageResponseType
+    packagePage(filter: PackageFilterInput):PackagePageResponseType
+    extraPage(filter: ExtraFilterInput):ExtraPageResponseType
+    hotelPage: HotelPageResponseType
+    clientPage(filter: ClientFilterInput) : ClientPageResponseType
+    roomPage(filter: RoomFilterInput):RoomPageResponseType
+    invoicePage(filter: InvoiceFilterInput):InvoicePageResponseType
+    invoiceDetailPage: InvoiceDetailsPageResponseType
+    bookingPage(filter: BookingFilterInput): BookingPageResponseType
+}
+
+type Mutation {
+    createClient(data: ClientCreateInput):Client
+    createBooking(data: BookingCreateInput):Booking
+    createInvoice(data: InvoiceCreateInput):Invoice
+}

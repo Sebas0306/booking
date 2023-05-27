@@ -1,0 +1,17 @@
+type Extra{
+    id: ID
+    name: String
+    cost: Int
+    description: String
+}
+
+type ExtraPageResponseType{
+    count: Int
+    rows:[Extra]
+}
+
+input ExtraFilterInput{
+    id: ID
+    name: String
+    pagination: Pagination
+}

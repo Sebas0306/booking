@@ -1,0 +1,30 @@
+type Booking{
+    id:ID
+    children: Int
+    adult: Int
+    description: String
+    client: Client
+    room: Room
+    package: Package
+    extra: Extra
+}
+
+type BookingPageResponseType{
+    count: Int
+    rows: [Booking]
+}
+
+input BookingFilterInput{
+    id:ID
+    pagination: Pagination
+}
+
+input BookingCreateInput{
+    children: Int
+    adult: Int!
+    description: String
+    idClient: Int!
+    idRoom: Int!
+    idPackage: Int
+    idExtra: Int
+}

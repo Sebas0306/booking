@@ -1,0 +1,32 @@
+type CostCenter {
+    id: ID
+    code: String
+    name: String
+    address: String
+    phone1: String
+    phone2: String
+    cellPhone1: String
+    cellPhone2: String
+    tradeName: String
+    shortName: String
+    displayOrder: Int
+    priceListIncludeTax: Boolean
+    applyTax: Boolean
+}
+input CostCentersFilterInput {
+    id: Int
+    name: String
+}
+
+input CostCenterFilterInput {
+    id: String
+    name: String
+    order: [Order]
+    pagination: Pagination
+    syncCostCenterCode: String
+}
+
+type CostCenterPageResponse {
+    count: Int
+    rows: [CostCenter]
+}
